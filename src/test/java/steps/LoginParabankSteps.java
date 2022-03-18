@@ -16,7 +16,8 @@ public class LoginParabankSteps {
     }
     @When("el usuario ingresa un nombre de usuario y una contrasena validos")
     public void elUsuarioIngresaUnNombreDeUsuarioYUnaContrasenaValidos() {
-        // Write code here that turns the phrase above into concrete actions
+        parabank.escribirInputsLogin();
+        parabank.clickLogIn();
 
     }
     @Then("el usuario debe tener acceso a la pagina de inicio")
