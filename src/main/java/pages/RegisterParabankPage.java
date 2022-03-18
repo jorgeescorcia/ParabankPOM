@@ -1,51 +1,51 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class RegisterParabankPage extends BasePage{
-    public RegisterParabankPage(){
+public class RegisterParabankPage extends BasePage {
+
+    public RegisterParabankPage() {
         super(driver);
-        PageFactory.initElements(driver,this);
     }
-    @FindBy(id = "customer.firstName")
-    public WebElement firstname_field;
 
-    @FindBy(id = "customer.lastName")
-    public WebElement lastname_field;
+    //Boton Register Home
+    public String button_register = "//a[contains(text(),'Register')]";
+    //input Pagina register
+    public String input_firstName = "//input[@id='customer.firstName']";
+    public String input_lastName = "//input[@id='customer.lastName']";
+    public String input_Address = "//input[@id='customer.address.street']";
+    public String input_City = "//input[@id='customer.address.city']";
+    public String input_State = "//input[@id='customer.address.state']";
+    public String input_ZipCode = "//input[@id='customer.address.zipCode']";
+    public String input_Phone = "//input[@id='customer.phoneNumber']";
+    public String input_SSN = "//input[@id='customer.ssn']";
+    public String input_userName = "//input[@id='customer.username']";
+    public String input_Password = "//input[@id='customer.password']";
+    public String input_Confirm = "//input[@id='repeatedPassword']";
+    public String btnRegister = "//tbody/tr[13]/td[2]/input[1]";
 
-    @FindBy(id = "customer.address.street")
-    public WebElement address_field;
-
-    @FindBy(id = "customer.address.city")
-    public WebElement city_field;
-
-    @FindBy(id = "customer.address.state")
-    public WebElement state_field;
-
-    @FindBy(id = "customer.address.zipCode")
-    public WebElement zipcode_field;
-
-    @FindBy(id = "customer.phoneNumber")
-    public WebElement phone_number_field;
-
-    @FindBy(id = "customer.ssn")
-    public WebElement ssn_field;
-
-    @FindBy(id = "customer.username")
-    public WebElement create_username_field;
-
-    @FindBy(id = "customer.password")
-    public WebElement create_password_field;
-
-    @FindBy(id = "repeatedPassword")
-    public WebElement confirm_password_fieldd;
-
-    @FindBy(xpath = "//input[@value='Register']")
-    public WebElement button_register;
+    public void navegar(){
+        navegarAParabank("https://parabank.parasoft.com/parabank/index.htm");
+    }
 
 
+    public void click_boton_register(){
+        clickElement(button_register);
+    }
+    public void escribirEnInputsRegister(){
+        escribir(input_firstName,"Jorge");
+        escribir(input_lastName,"Escorcia");
+        escribir(input_Address,"calle 20");
+        escribir(input_City,"Planera Rica");
+        escribir(input_State,"cordoba");
+        escribir(input_ZipCode,"0001");
+        escribir(input_Phone,"123456789");
+        escribir(input_SSN,"4578452");
+        escribir(input_userName,"jaescorcia");
+        escribir(input_Password,"123456");
+        escribir(input_Confirm,"123456");
+        clickElement(btnRegister);
 
+    }
 }
+
+
