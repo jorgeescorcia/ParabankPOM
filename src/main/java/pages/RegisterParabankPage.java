@@ -1,6 +1,10 @@
 package pages;
 
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import pages.basepage.BasePage;
+
 public class RegisterParabankPage extends BasePage {
 
     public RegisterParabankPage() {
@@ -8,20 +12,37 @@ public class RegisterParabankPage extends BasePage {
     }
 
     //Boton Register Home
-    public String button_register = "//a[contains(text(),'Register')]";
+    //public String button_register = "//a[contains(text(),'Register')]";
+    @FindBy(xpath = "//a[contains(text(),'Register')]")
+    private WebElement button_register;
+
     //input Pagina register
-    public String input_firstName = "//input[@id='customer.firstName']";
-    public String input_lastName = "//input[@id='customer.lastName']";
-    public String input_Address = "//input[@id='customer.address.street']";
-    public String input_City = "//input[@id='customer.address.city']";
-    public String input_State = "//input[@id='customer.address.state']";
-    public String input_ZipCode = "//input[@id='customer.address.zipCode']";
-    public String input_Phone = "//input[@id='customer.phoneNumber']";
-    public String input_SSN = "//input[@id='customer.ssn']";
-    public String input_userName = "//input[@id='customer.username']";
-    public String input_Password = "//input[@id='customer.password']";
-    public String input_Confirm = "//input[@id='repeatedPassword']";
-    public String btnRegister = "//tbody/tr[13]/td[2]/input[1]";
+    @FindBy(xpath = "//input[@id='customer.firstName']")
+    private WebElement input_firstName;
+    @FindBy(xpath = "//input[@id='customer.lastName']")
+    private WebElement input_lastName;
+    @FindBy(xpath = "//input[@id='customer.address.street']")
+    private WebElement input_Address;
+    @FindBy(xpath = "//input[@id='customer.address.city']")
+    private WebElement input_City;
+    @FindBy(xpath = "//input[@id='customer.address.state']")
+    private WebElement input_State;
+    @FindBy(xpath = "//input[@id='customer.address.zipCode']")
+    private WebElement input_ZipCode;
+    @FindBy(xpath = "//input[@id='customer.phoneNumber']")
+    private WebElement input_Phone;
+    @FindBy(xpath = "//input[@id='customer.ssn']")
+    private WebElement input_SSN;
+    @FindBy(xpath = "//input[@id='customer.username']")
+    private WebElement input_userName;
+    @FindBy(xpath = "//input[@id='customer.password']")
+    private WebElement input_Password;
+    @FindBy(xpath = "//input[@id='repeatedPassword']")
+    private WebElement input_Confirm;
+    @FindBy(xpath = "//tbody/tr[13]/td[2]/input[1]")
+    private WebElement btnRegister;
+
+
 
     public void navegar(){
         navegarAParabank("https://parabank.parasoft.com/parabank/index.htm");

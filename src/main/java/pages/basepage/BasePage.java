@@ -1,10 +1,11 @@
-package pages;
+package pages.basepage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,6 +26,7 @@ public class BasePage {
     //Constructor para crear la instacia del driver una sola vez
     public BasePage(WebDriver driver) {
         BasePage.driver = driver;
+        PageFactory.initElements(driver,this);
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 10);
     }
@@ -37,17 +39,20 @@ public class BasePage {
     private WebElement Find(String locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
-//Funcion click
-    public void clickElement(String locator){
-        Find(locator).click();
+
+    //Metodo click
+    public void clickElement(WebElement webElement){
+        webElement.click();
     }
-    //Funcion Para Escrbir en los campos
-    public void escribir(String locator, String texto){
-        Find(locator).clear(); //Limpiar el campo de texto
-        Find(locator).sendKeys(texto);
+
+    //Metodo Para Escrbir en los campos
+    public void escribir(WebElement webElement, String texto){
+        webElement.clear(); //Limpiar el campo de texto
+        webElement.sendKeys(texto);
     }
-    //
+    //Metodo cerra navegador
     public void cerrarNavegador(){
+        driver.close();
 
     }
 }

@@ -3,7 +3,7 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.ContactUsPage;
+import pages.contact.ContactUsPage;
 
 public class ContactUsSteps {
     ContactUsPage contact = new ContactUsPage();
@@ -19,8 +19,8 @@ public class ContactUsSteps {
         contact.escribirEnContactUs();
 
     }
-    @Then("El usuario debería ver un mensaje de confirmacion")
-    public void el_usuario_debería_ver_un_mensaje_de_confirmacion() {
+    @Then("El usuario deberia ver un mensaje de confirmacion")
+    public void el_usuario_deberia_ver_un_mensaje_de_confirmacion() {
 
     }
 }

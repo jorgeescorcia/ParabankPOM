@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import pages.ParabankPage;
+import pages.login.ParabankPage;
 
 
 public class LoginParabankSteps {
@@ -19,10 +19,13 @@ public class LoginParabankSteps {
         parabank.escribirInputsLogin();
         parabank.clickLogIn();
 
+
     }
     @Then("el usuario debe tener acceso a la pagina de inicio")
     public void elUsuarioDebeTenerAccesoALaPaginaDeInicio() {
         // Write code here that turns the phrase above into concrete actions
+
+        //parabank.cerrarNavegador();
 
     }
 
