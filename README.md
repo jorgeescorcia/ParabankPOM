@@ -5,6 +5,8 @@
 El plan de pruebas está diseñado como una línea base para identificar lo que se considera dentro y fuera del alcance de las pruebas y cuáles son los riesgos.
 
 ### **Recursos:**
+| Tester | Participación | 
+|Jorge Escorcia | 100% | 
 
 ### **Alcance:**
 
