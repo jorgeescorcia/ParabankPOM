@@ -31,7 +31,7 @@ public class LoginParabankSteps {
     }
 
     // Scenario 2
-   
+
     @Given("que el usuario intenta loguearse")
     public void que_el_usuario_intenta_loguearse() {
         parabank.navegar_a_parabank();
