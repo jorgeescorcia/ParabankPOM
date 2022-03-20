@@ -1,4 +1,4 @@
-# ParabankPOM
+# ParabankPOM - Jorge Andres Esscorcia QA Training
 
 ### **Introducción:**
 
