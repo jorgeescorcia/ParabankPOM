@@ -1,4 +1,4 @@
-# ParabankPOM - Jorge Andres Esscorcia QA Training
+# ParabankPOM - Jorge Andres Escorcia QA Training Sofka
 
 ### **Introducción:**
 
