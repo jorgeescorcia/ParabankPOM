@@ -22,7 +22,7 @@ Modulos
 
 HU1: yo como usuario necestio validar la funcionalidad de login exitoso y fallido
 
-se verificara la funcionalidad de login ingresando usuario previamente registrado, por otro lado
+se verificará la funcionalidad de login ingresando usuario previamente registrado, por otro lado
 se validará que cuando el usuario no ingrese texto en usuario del login el sistema no le de acceso a la web
 
 HU2: Yo como usuario necesito validar la funcionalidad de registro exitoso y fallido
