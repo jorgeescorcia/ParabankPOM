@@ -6,6 +6,7 @@ El plan de pruebas está diseñado como una línea base para identificar lo que 
 
 ### **Recursos:**
 | Tester | Participación | 
+--- | --- | 
 |Jorge Escorcia | 100% | 
 
 ### **Alcance:**
