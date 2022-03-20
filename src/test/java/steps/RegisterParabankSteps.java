@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pages.RegisterParabankPage;
 
 public class RegisterParabankSteps {
@@ -25,6 +26,7 @@ public class RegisterParabankSteps {
     }
     @Then("El usuario debe ver la pagina de bienvenida")
     public void el_usuario_debe_ver_la_pagina_de_bienvenida() {
-
+        Assert.assertEquals("Your account was created successfully. You are now",register.validateRegister());
+        register.cerrarNavegador();
     }
 }

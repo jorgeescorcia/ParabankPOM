@@ -1,6 +1,5 @@
 package pages;
 
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.basepage.BasePage;
@@ -41,6 +40,8 @@ public class RegisterParabankPage extends BasePage {
     private WebElement input_Confirm;
     @FindBy(xpath = "//tbody/tr[13]/td[2]/input[1]")
     private WebElement btnRegister;
+    @FindBy (xpath = "//p[contains(text(),'Your account was created successfully. You are now')]")
+    private WebElement textValidateRegister;
 
 
 
@@ -66,6 +67,10 @@ public class RegisterParabankPage extends BasePage {
         escribir(input_Confirm,"123456");
         clickElement(btnRegister);
 
+    }
+
+    public String validateRegister(){
+        return textFromElement(textValidateRegister);
     }
 }
 

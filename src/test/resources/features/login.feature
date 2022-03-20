@@ -9,3 +9,8 @@ Feature: funcionalidad Login en parabank
     Given que el usuario se encuentra en la pagina de inicio de sesion
     When el usuario ingresa un nombre de usuario y una contrasena validos
     Then el usuario debe tener acceso a la pagina de inicio
+  @t
+  Scenario: inicio de sesion invalido
+    Given que el usuario intenta loguearse
+    When el usuario no ingresa un nombre de usuario
+    Then el usuario no debe tener acceso a la pagina de inicio

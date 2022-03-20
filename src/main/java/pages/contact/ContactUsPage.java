@@ -28,6 +28,10 @@ public class ContactUsPage extends BasePage {
     @FindBy(xpath = "//input[@value='Send to Customer Care']")
     private WebElement btnEnviar;
 
+    @FindBy(xpath = "//p[contains(text(),'A Customer Care Representative will be contacting ')]")
+    private WebElement textValidateContactUs;
+
+
 
     public void navegar(){
         navegarAParabank("https://parabank.parasoft.com/parabank/index.htm");
@@ -42,5 +46,8 @@ public class ContactUsPage extends BasePage {
         escribir(phone,"548585");
         escribir(message,"Hola, esto es un mensaje de la prueba de automatizacion");
         clickElement(btnEnviar);
+    }
+    public String validateContactUs(){
+        return textFromElement(textValidateContactUs);
     }
 }
