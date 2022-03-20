@@ -31,6 +31,11 @@ public class ContactUsPage extends BasePage {
     @FindBy(xpath = "//p[contains(text(),'A Customer Care Representative will be contacting ')]")
     private WebElement textValidateContactUs;
 
+    @FindBy(xpath = "//span[contains(text(),'Email is required.')]")
+    private WebElement textValidateFailedContactUs;
+
+    ////span[@id='email.errors']
+
 
 
     public void navegar(){
@@ -43,11 +48,24 @@ public class ContactUsPage extends BasePage {
     public void escribirEnContactUs(){
         escribir(name,"Escorcia");
         escribir(email,"Escorcia@gmail.com");
-        escribir(phone,"548585");
+        escribir(phone,"5485856");
         escribir(message,"Hola, esto es un mensaje de la prueba de automatizacion");
         clickElement(btnEnviar);
     }
     public String validateContactUs(){
         return textFromElement(textValidateContactUs);
+    }
+
+    public void escribirEnContactUsFailed(){
+        escribir(name,"Escorcia");
+        escribir(email,"");
+        escribir(phone,"548585");
+        escribir(message,"Hola, esto es un mensaje de la prueba de automatizacion");
+        clickElement(btnEnviar);
+    }
+    public String validarContactFailed() {
+        textFromElement(textValidateFailedContactUs);
+        return textFromElement(textValidateFailedContactUs);
+
     }
 }

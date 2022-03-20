@@ -3,32 +3,38 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.AfterClass;
 import org.junit.Assert;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
+
 import pages.login.ParabankPage;
 
 
 public class LoginParabankSteps {
 
-   ParabankPage parabank = new ParabankPage();
+    ParabankPage parabank = new ParabankPage();
+
+
+
 
     @Given("que el usuario se encuentra en la pagina de inicio de sesion")
     public void queElUsuarioSeEncuentraEnLaPaginaDeInicioDeSesion() {
         parabank.navegar_a_parabank();
     }
+
     @When("el usuario ingresa un nombre de usuario y una contrasena validos")
     public void elUsuarioIngresaUnNombreDeUsuarioYUnaContrasenaValidos() {
         parabank.escribirInputsLogin();
         parabank.clickLogIn();
     }
+
     @Then("el usuario debe tener acceso a la pagina de inicio")
     public void elUsuarioDebeTenerAccesoALaPaginaDeInicio() {
 
-        Assert.assertEquals("Accounts Overview",parabank.validarLogin());
+        Assert.assertEquals("Accounts Overview", parabank.validarLogin());
         parabank.cerrarNavegador();
+
+
     }
+
 
     // Scenario 2
 
@@ -47,6 +53,6 @@ public class LoginParabankSteps {
     public void el_usuario_no_debe_tener_acceso_a_la_pagina_de_inicio() {
         Assert.assertEquals("Please enter a username and password.",parabank.validarLoginFailed());
         parabank.cerrarNavegador();
-        System.out.println("El usuario no pudo ingresar");
+
     }
 }

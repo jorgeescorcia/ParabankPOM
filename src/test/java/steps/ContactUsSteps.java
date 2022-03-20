@@ -25,4 +25,19 @@ public class ContactUsSteps {
         Assert.assertEquals("A Customer Care Representative will be contacting you.",contact.validateContactUs());
         contact.cerrarNavegador();
     }
+    @Given("que el usuario esta en la pagina de contactUs")
+    public void que_el_usuario_esta_en_la_pagina_de_contact_us() {
+        contact.navegar();
+        contact.click_boton_contactUs();
+    }
+    @When("el usuario ingresa no ingresa email y presiona click")
+    public void el_usuario_ingresa_no_ingresa_email_y_presiona_click() {
+        contact.escribirEnContactUsFailed();
+    }
+    @Then("El usuario no deberia poder enviar mensaje")
+    public void el_usuario_no_deberia_poder_enviar_mensaje() {
+        Assert.assertEquals("Email is required.",contact.validarContactFailed());
+        contact.cerrarNavegador();
+
+    }
 }

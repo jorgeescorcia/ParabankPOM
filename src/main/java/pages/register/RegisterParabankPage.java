@@ -43,6 +43,11 @@ public class RegisterParabankPage extends BasePage {
     @FindBy (xpath = "//p[contains(text(),'Your account was created successfully. You are now')]")
     private WebElement textValidateRegister;
 
+    @FindBy (xpath = "//span[@id='customer.address.city.errors']")
+    private WebElement textValidateFailedRegister;
+
+
+
 
 
     public void navegar(){
@@ -59,10 +64,10 @@ public class RegisterParabankPage extends BasePage {
         escribir(input_Address,"calle 20");
         escribir(input_City,"Planera Rica");
         escribir(input_State,"cordoba");
-        escribir(input_ZipCode,"0001");
+        escribir(input_ZipCode,"0002");
         escribir(input_Phone,"123456789");
         escribir(input_SSN,"4578452");
-        escribir(input_userName,"jaescorcia");
+        escribir(input_userName,"jaescorci");
         escribir(input_Password,"123456");
         escribir(input_Confirm,"123456");
         clickElement(btnRegister);
@@ -72,6 +77,30 @@ public class RegisterParabankPage extends BasePage {
     public String validateRegister(){
         return textFromElement(textValidateRegister);
     }
+
+
+    //Register Failed
+    public void escribirEnInputsRegisterFailed(){
+        escribir(input_firstName,"Jorge");
+        escribir(input_lastName,"Escorcia");
+        escribir(input_Address,"calle 20");
+        escribir(input_City,"");
+        escribir(input_State,"cordoba");
+        escribir(input_ZipCode,"0001");
+        escribir(input_Phone,"123456789");
+        escribir(input_SSN,"4578452");
+        escribir(input_userName,"jaescorcia");
+        escribir(input_Password,"123456");
+        escribir(input_Confirm,"123456");
+        clickElement(btnRegister);
+
+    }
+    public String validateRegisterFailed(){
+        return textFromElement(textValidateFailedRegister);
+    }
 }
+
+
+
 
 

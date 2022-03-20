@@ -2,6 +2,7 @@ package pages.login;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.basepage.BasePage;
@@ -36,14 +37,13 @@ public class ParabankPage extends BasePage {
         escribir(username,"jaescorcia");
         escribir(password,"123456");
     }
-    public void escribirInputsLoginFailed(){
-        escribir(username,"");
-        escribir(password,"123456");
-    }
+
 
     public void clickLogIn(){
         clickElement(btnLogin);
     }
+
+
     public String validarLogin(){
         if (true){
             textFromElement(textValidateLogin);
@@ -51,6 +51,12 @@ public class ParabankPage extends BasePage {
         }
         return textFromElement(textValidateLogin);
     }
+
+    public void escribirInputsLoginFailed(){
+        escribir(username,"");
+        escribir(password,"123456");
+    }
+
     public String validarLoginFailed(){
         if (true){
             textFromElement(textValidateLoginFailed);
