@@ -66,9 +66,9 @@ Por otro lado las pruebas se realizara de forma automatizada utilizando las sigu
 
 ### **Escenarios**
 
-- Compra con usuario existente.
-- Despliegue de la categorías de los productos
-- Despliegue del carrito de compras
+- Registro Exitoso /Fallido
+- Login Exitoso / Fallido
+-Enviar Mensaje de Contacto Exitoso / Fallido
 
 ### **Pruebas de Aceptación:**
 
